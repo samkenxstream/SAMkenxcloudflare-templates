@@ -1,7 +1,5 @@
-const worker: ExportedHandler = {
-  async fetch(req) {
-    return new Response(`request method: ${req.method}`);
-  },
+export default {
+	async fetch(request: Request) {
+		return new Response(`request method: ${request.method}`);
+	},
 };
-
-export default worker;

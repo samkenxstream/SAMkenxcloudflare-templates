@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
       - 'packages/workers.new/**'
+  workflow_dispatch:
 
 jobs:
   deploy:

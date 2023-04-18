@@ -1,5 +1,7 @@
 # Template: worker-mysql
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/worker-mysql)
+
 This repo contains example code and a MySQL driver that can be used in any Workers project. If you are interested in using the driver _outside_ of this template, copy the `driver/mysql` module into your project's `node_modules` or directly alongside your source.
 
 ## Setup
@@ -23,12 +25,12 @@ Before you start, please refer to the **[official tutorial](https://developers.c
 ```ts
 const mysql = new Client();
 const mysqlClient = await mysql.connect({
-  username: '<DATABASE_USER>',
-  db: '<DATABASE_NAME>',
-  // hostname is the full URL to your pre-created Cloudflare Tunnel, see documentation here:
-  // https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/create-tunnel
-  hostname: env.TUNNEL_HOST || 'https://dev.example.com',
-  password: env.DATABASE_PASSWORD, // use a secret to store passwords
+	username: '<DATABASE_USER>',
+	db: '<DATABASE_NAME>',
+	// hostname is the full URL to your pre-created Cloudflare Tunnel, see documentation here:
+	// https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/create-tunnel
+	hostname: env.TUNNEL_HOST || 'https://dev.example.com',
+	password: env.DATABASE_PASSWORD, // use a secret to store passwords
 });
 ```
 

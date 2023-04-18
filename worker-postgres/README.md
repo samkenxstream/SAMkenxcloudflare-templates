@@ -1,5 +1,7 @@
 # Template: worker-postgres
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/worker-postgres)
+
 This repo contains example code and a PostgreSQL driver that can be used in any Workers project. If you are interested in using the driver _outside_ of this template, copy the `driver/postgres` module into your project's `node_modules` or directly alongside your source.
 
 ## Setup
@@ -22,13 +24,13 @@ Before you start, please refer to the **[official tutorial](https://developers.c
 
 ```ts
 const client = new Client({
-  user: '<DATABASE_USER>',
-  database: '<DATABASE_NAME>',
-  // hostname is the full URL to your pre-created Cloudflare Tunnel, see documentation here:
-  // https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/create-tunnel
-  hostname: env.TUNNEL_HOST || 'https://dev.example.com',
-  password: env.DATABASE_PASSWORD, // use a secret to store passwords
-  port: '<DATABASE_PORT>',
+	user: '<DATABASE_USER>',
+	database: '<DATABASE_NAME>',
+	// hostname is the full URL to your pre-created Cloudflare Tunnel, see documentation here:
+	// https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/create-tunnel
+	hostname: env.TUNNEL_HOST || 'https://dev.example.com',
+	password: env.DATABASE_PASSWORD, // use a secret to store passwords
+	port: '<DATABASE_PORT>',
 });
 
 await client.connect();
